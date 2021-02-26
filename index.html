@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+         <title>Telcecummunecations</title>
+     
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" href="stylesheets/default.css" />
+    <script src="//cdn.jsdelivr.net/npm/tabletop@1.5.2/src/tabletop.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+    <script src="//unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+  </head>
+    <style>
+    html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+ #map-div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+  </style>
+
+  <body>
+  
+  
+  
+    <div id="map-div"></div>
+    <script>
+var map = L.map('map-div').setView([27.76133, 17.490234],5);
+var basemap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Basemap (c) <ahref="http://openstreetmap.org">OpenStreetMap</a>',
+ minZoom: 2,
+ maxZoom: 18 });  
+////// 
+basemap.addTo(map);
+      
+  
+
+var childrin= L.layerGroup();
+var Trefugee= L.layerGroup();    
+var populationprop =L.layerGroup();
+var population =L.layerGroup();
+var city_population=L.layerGroup();;
+var Stations=L.layerGroup();
+     
+      
+ function addPoints(data, tabletop) {
+  for (var row in data) { 
+     
+city_population=(data[row].population)/5;
+var cityname=data[row].City;
+var circle = L.circle([data[row].Latitude,data[row].Longitude],
+{
+    color: (0, 255, 10, 50),
+    fillColor: '#00FF00',
+    fillOpacity: 0.5,
+    radius: city_population
+}).addTo(population);
+ circle.bindPopup(cityname+"<br>"+city_population).openPopup();
+
+ city_population=(data[row].population_proper)/5;
+  var cityname=data[row].City;
+  var circle = L.circle([data[row].Latitude,data[row].Longitude],
+{
+    color: (255, 0, 10, 50),
+    fillColor: '#ffFF00',
+    fillOpacity: 0.5,
+    radius: city_population
+}).addTo(populationprop);    
+    circle.bindPopup(cityname+" <br> "+city_population).openPopup();
+    
+ // city_population=(data[row].Trefugee);
+//var cityname=data[row].City;
+//var circle = L.circle([data[row].Latitude,data[row].Longitude],
+//{
+//    color: (0, 0, 255, 50),
+//    fillColor: '#00FFff',
+//    fillOpacity: 0.5,
+//    radius: city_population
+//}).addTo(Trefugee);
+//    circle.bindPopup(cityname+" <br> "+city_population).openPopup();
+// console.log(city_population)
+
+///////
+var station=(data[row].stations_config);
+var cityname=data[row].City;
+var circle = L.circle([data[row].Latitude,data[row].Longitude],
+{
+    color: (0, 255, 10, 50),
+    fillColor: '#00FF00',
+    fillOpacity: 0.5,
+   radius:station
+}).addTo(Stations);
+var station_Url=(data[row].station_url);
+circle.bindPopup( cityname +" <br> " +'<a href = "'+ station_Url + '"  target=" _blank"> Station </a>' ).openPopup();
+//////
+    city_population=(data[row].childrin);
+var cityname=data[row].City;
+var circle = L.circle([data[row].Latitude,data[row].Longitude],
+{
+    color: (255, 0, 100, 50),
+    fillColor: '#ff0080',
+    fillOpacity: 0.5,
+    radius: city_population
+}).addTo(childrin);
+    circle.bindPopup(cityname+" <br> "+city_population).openPopup();
+// console.log(city_population)
+ } } 
+//////////
+var ngpn =L.layerGroup();
+//function loadDoc(){
+        var nGpn = $.ajax({
+            url:  "lib/ngpn.txt",
+            dataType: "json",
+            success: console.log("nGpn data successfully loaded."),
+            error: function(xhr) {
+               alert(xhr.statusText)
+            }
+          })
+     
+        $.when(nGpn).done(function() {
+          
+           function style(feature) {
+    return {
+        fillColor:(feature.properties.density),
+        weight: 2,
+        opacity: 1,
+        color: 'rgb(204, 51, 204)',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+} 
+          
+    var kynGpn =  L.geoJson( nGpn.responseJSON, {style: style}).addTo(ngpn);       
+          
+     // Add requested external GeoJSON to map
+        //    var kynGpn = L.geoJSON(nGpn.responseJSON).addTo(ngpn);
+       
+  
+        });
+          
+        //////////
+var submarine =L.layerGroup();
+//function loadDoc(){
+        var submarsible = $.ajax({
+           url: "lib/submarine.txt",
+            dataType: "json",
+            success: console.log("submarsible data successfully loaded."),
+            error: function(xhr) {
+               alert(xhr.statusText)
+            }
+          })
+     ////   console.log(submarsible)///>>>>worked
+        $.when(submarsible).done(function() {
+          
+        function style(feature) {
+    return {
+        fillColor:(feature.properties.density),
+        weight: 2,
+        opacity: 1,
+        color: 'rgb(255, 64, 0)',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+ var kysub =  L.geoJson( submarsible.responseJSON, {style: style}).addTo(submarine);  
+          
+     // Add requested external GeoJSON to map
+  //     var kysub = L.geoJSON(submarsible.responseJSON).addTo(submarine);
+     // console.log(kyCounties);<<<<<<<<
+        });
+    
+    ///////////////////      
+//var tawergha_polygon = L.layerGroup();
+//var polygon = L.polygon( [         
+//     [32.2,14.8],[32.2,15.4],[32,15.5],[31.5,15.6],[31.6,15],[31.7,14.7],[32,14.7] ] , {
+//  color: 'black',
+//    fillColor: '#f03',
+//    fillOpacity: 0.5,         
+//}).addTo(tawergha_polygon);
+      // tawergha_polygon.bindPopup("This is Tawergha ").openPopup();
+//      polygon.bindPopup("This is Tawergha");
+      
+//	var cities = L.layerGroup();
+//	L.marker([32.8,13]).bindPopup('this is tripoli').addTo(cities);
+//	L.marker([32.117664, 20.129275]).bindPopup('this is benghazi').addTo(cities);
+//	L.marker([32.083611,23.976389]).bindPopup('this is tubriq').addTo(cities);
+//	L.marker([28.544453, 17.556462]).bindPopup('this is zala').addTo(cities);
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+	var	streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+	
+	var baseLayers = {
+		"Grayscale": grayscale,
+		"Streets": streets
+	};
+
+	var overlays = {
+	//	   "Cities": cities,
+    //   "تاورغاء ":tawergha_polygon,
+       "عدد السكان ":population,
+       "تعديل عدد السكان ":populationprop,
+      // "نازحي تاورغاء":Trefugee,
+      "أطفال " :childrin,
+       "hlc_station":Stations,
+      "Submaeine Optical FiberCable ": submarine,
+      "NGPN Cable": ngpn
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+			
+map.on('click', function(ev) {
+    alert(ev.latlng); // ev is an event object (MouseEvent in this case)
+});	
+
+function init() {
+  Tabletop.init({
+    key: "1ahipXBCnFrJzzREvYW-PJ-BYp7W5hVebVXwqBXlPE8M",
+    callback: addPoints,
+    simpleSheet: true
+  })
+}
+init()
+
+      </script>
+  </body>
+</html>
+
+    
+ 
