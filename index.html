@@ -120,7 +120,7 @@ var circle = L.circle([data[row].Latitude,data[row].Longitude],
 var ngpn =L.layerGroup();
 //function loadDoc(){
         var nGpn = $.ajax({
-            url:  "https://github.com/mussatawerghi/coffeecup/blob/main/lib/ngpn.txt",
+            url:  "ngpn.txt",
             dataType: "json",
             success: console.log("nGpn data successfully loaded."),
             error: function(xhr) {
