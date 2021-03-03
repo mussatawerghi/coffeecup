@@ -343,7 +343,8 @@
       "properties": {
         "marker-color": "#dceb0f",
         "marker-size": "medium",
-        "marker-symbol": ""
+        "marker-symbol": "",
+        "staton_name": "univirsity"
       },
       "geometry": {
         "type": "Point",
@@ -358,7 +359,8 @@
       "properties": {
         "marker-color": "#f0e80a",
         "marker-size": "medium",
-        "marker-symbol": ""
+        "marker-symbol": "",
+        "staton_name": "elmughtar"
       },
       "geometry": {
         "type": "Point",
@@ -467,7 +469,8 @@
       "properties": {
         "marker-color": "#f2d307",
         "marker-size": "medium",
-        "marker-symbol": ""
+        "marker-symbol": "",
+        "staton_name": "airport"
       },
       "geometry": {
         "type": "Point",
@@ -482,7 +485,8 @@
       "properties": {
         "marker-color": "#eae20b",
         "marker-size": "medium",
-        "marker-symbol": ""
+        "marker-symbol": "",
+        "staton_name": "labrq"
       },
       "geometry": {
         "type": "Point",
