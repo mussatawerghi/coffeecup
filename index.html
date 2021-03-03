@@ -180,6 +180,34 @@ var submarine =L.layerGroup();
   //     var kysub = L.geoJSON(submarsible.responseJSON).addTo(submarine);
      // console.log(kyCounties);<<<<<<<<
         });
+      
+var aljabal =L.layerGroup();
+//function loadDoc(){
+        var nGabal = $.ajax({
+            url:"https://raw.githubusercontent.com/mussatawerghi/coffeecup/main/aljabal_network",  //"cable/ngpn.txt",
+            dataType: "json",
+            success: console.log("Al_Jabal_Alakhder data successfully loaded."),
+            error: function(xhr) {
+               alert(xhr.statusText)
+            }
+          })
+     
+        $.when(nGabal).done(function() {
+          
+           function style(feature) {
+    return {
+        fillColor:(feature.properties.density),
+        weight: 2,
+        opacity: 1,
+        color: 'rgb(100, 50, 150)',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+} 
+          
+    var kynnGabal =  L.geoJson( nGabal.responseJSON, {style: style}).addTo(aljabal);       
+     
+        });	   
     
     ///////////////////      
 //var tawergha_polygon = L.layerGroup();
@@ -221,7 +249,8 @@ var submarine =L.layerGroup();
       "أطفال " :childrin,
        "hlc_station":Stations,
       "Submaeine Optical FiberCable ": submarine,
-      "NGPN Cable": ngpn
+      "NGPN Cable": ngpn,
+	 "Aljabal":aljabal		
 	};
 
 	L.control.layers(baseLayers, overlays).addTo(map);
