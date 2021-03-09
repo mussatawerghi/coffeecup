@@ -377,7 +377,7 @@
         "marker-symbol": "",
         "station_name": "labriq airport",
         "company": "HLC6",
-        "website": "https://www.tawergha.coffeecup.com"
+        "website": "https://tawergha.coffeecup.com/tele.html"
       },
       "geometry": {
         "type": "Point",
@@ -395,7 +395,7 @@
         "marker-symbol": "",
         "station_name": "Labriq_postoffice",
         "company": "HLC7",
-        "website": ""
+        "website": "https://tawergha.coffeecup.com/tele.html"
       },
       "geometry": {
         "type": "Point",
@@ -412,7 +412,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "Emmgration",
-        "company": "HLC8"
+        "company": "HLC8",
+        "website": "https://tawergha.coffeecup.com/tele.html"
       },
       "geometry": {
         "type": "Point",
@@ -429,7 +430,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "old post office",
-        "company": "HLC9"
+        "company": "HLC9",
+        "website": "https://tawergha.coffeecup.com/tele.html"
       },
       "geometry": {
         "type": "Point",
