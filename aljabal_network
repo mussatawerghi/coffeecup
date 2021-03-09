@@ -235,7 +235,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "University",
-        "company": "HLC1"
+        "company": "HLC1",
+        "website": "https://www.hlc.ly/"
       },
       "geometry": {
         "type": "Point",
@@ -252,7 +253,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "Omar Elmughtar",
-        "company": "HLC2"
+        "company": "HLC2",
+        "website": "https://www.hlc.ly/"
       },
       "geometry": {
         "type": "Point",
@@ -269,7 +271,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "Asluntah",
-        "company": "HLC3"
+        "company": "HLC3",
+        "website": "https://www.hlc.ly/"
       },
       "geometry": {
         "type": "Point",
@@ -286,7 +289,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "Albeda",
-        "company": "HLC3"
+        "company": "HLC3",
+        "website": "https://www.hlc.ly/"
       },
       "geometry": {
         "type": "Point",
@@ -303,7 +307,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "Alfaydya",
-        "company": "HLC5"
+        "company": "HLC5",
+        "website": "https://www.hlc.ly/"
       },
       "geometry": {
         "type": "Point",
@@ -371,7 +376,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "labriq airport",
-        "company": "HLC6"
+        "company": "HLC6",
+        "website": "https://www.tawergha.coffeecup.com"
       },
       "geometry": {
         "type": "Point",
@@ -388,7 +394,8 @@
         "marker-size": "medium",
         "marker-symbol": "",
         "station_name": "Labriq_postoffice",
-        "company": "HLC7"
+        "company": "HLC7",
+        "website": ""
       },
       "geometry": {
         "type": "Point",
