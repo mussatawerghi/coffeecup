@@ -234,7 +234,8 @@
         "marker-color": "#dceb0f",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "University"
+        "station_name": "University",
+        "company": "HLC1"
       },
       "geometry": {
         "type": "Point",
@@ -250,7 +251,8 @@
         "marker-color": "#f0e80a",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "Omar Elmughtar"
+        "station_name": "Omar Elmughtar",
+        "company": "HLC2"
       },
       "geometry": {
         "type": "Point",
@@ -266,7 +268,8 @@
         "marker-color": "#f1d209",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "Asluntah"
+        "station_name": "Asluntah",
+        "company": "HLC3"
       },
       "geometry": {
         "type": "Point",
@@ -282,7 +285,8 @@
         "marker-color": "#edf109",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "Albeda"
+        "station_name": "Albeda",
+        "company": "HLC3"
       },
       "geometry": {
         "type": "Point",
@@ -298,7 +302,8 @@
         "marker-color": "#ebe40f",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "Alfaydya"
+        "station_name": "Alfaydya",
+        "company": "HLC5"
       },
       "geometry": {
         "type": "Point",
@@ -342,7 +347,8 @@
     {
       "type": "Feature",
       "properties": {
-        "station_name": ""
+        "station_name": "",
+        "marker-color": ""
       },
       "geometry": {
         "type": "LineString",
@@ -364,7 +370,8 @@
         "marker-color": "#f2d307",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "labriq airport"
+        "station_name": "labriq airport",
+        "company": "HLC6"
       },
       "geometry": {
         "type": "Point",
@@ -380,7 +387,8 @@
         "marker-color": "#eae20b",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "Labriq_postoffice"
+        "station_name": "Labriq_postoffice",
+        "company": "HLC7"
       },
       "geometry": {
         "type": "Point",
@@ -396,7 +404,8 @@
         "marker-color": "#e7d808",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "Emmgration"
+        "station_name": "Emmgration",
+        "company": "HLC8"
       },
       "geometry": {
         "type": "Point",
@@ -412,7 +421,8 @@
         "marker-color": "#e9e107",
         "marker-size": "medium",
         "marker-symbol": "",
-        "station_name": "old post office"
+        "station_name": "old post office",
+        "company": "HLC9"
       },
       "geometry": {
         "type": "Point",
